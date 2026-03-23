@@ -209,6 +209,35 @@ section {
   overflow: hidden;
 }
 
+/* Botón Hero - Estilo moderno con efecto glassmorphism */
+.hero-text .btn {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.hero-text .btn:hover {
+    background: #10B981;
+    color: white;
+    border-color: #10B981;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.3);
+}
+
+.hero-text .btn:active {
+    transform: translateY(-1px);
+}
+
 /* Fondo con transparencia en modo oscuro */
 #hero::after {
   content: "";
@@ -465,56 +494,275 @@ section {
 /* ===========================
    SECCIÓN CONTACTO
 =========================== */
-.contact-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+/* Elementos adicionales necesarios */
+.section-subtitle {
+    text-align: center;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
 }
 
+/* Contact Content - Manteniendo tu estructura base */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+/* Contact Form - Mejorado manteniendo tu estilo */
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    transition: var(--transition);
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-group label {
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-color);
 }
 
 .form-group input,
 .form-group textarea {
-  padding: 0.8rem;
-  border: 1px solid var(--border-color);
-  border-radius: 5px;
-  background: var(--card-bg);
-  color: var(--text-color);
-  transition: var(--transition);
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    transition: var(--transition);
+    font-family: inherit;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  outline: none;
-  border-color: var(--secondary-color);
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(var(--secondary-color-rgb), 0.1);
 }
 
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-color);
+    opacity: 0.5;
+}
+
+/* Botón mejorado */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.875rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Form Message */
+.form-message {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+.form-message.success {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+    border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+.form-message.error {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+/* Contact Info - Mejorado manteniendo tu estilo base */
 .contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
+/* Contact Cards - Nuevo estilo manteniendo tus colores */
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--card-bg);
+    padding: 1.25rem;
+    border-radius: 10px;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+.contact-card:hover {
+    transform: translateX(5px);
+    border-color: var(--secondary-color);
+}
+
+.contact-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(var(--secondary-color-rgb), 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.contact-card:hover .contact-icon {
+    background: var(--secondary-color);
+}
+
+.contact-icon i {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    transition: var(--transition);
+}
+
+.contact-card:hover .contact-icon i {
+    color: white;
+}
+
+.contact-details {
+    flex: 1;
+}
+
+.contact-details h3 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin-bottom: 0.25rem;
+}
+
+.contact-details a,
+.contact-details span {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.contact-details a:hover {
+    color: var(--secondary-color);
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--card-bg);
+    border-radius: 50%;
+    color: var(--text-color);
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+.social-links a:hover {
+    background: var(--secondary-color);
+    color: white;
+    transform: translateY(-3px);
+    border-color: var(--secondary-color);
+}
+
+/* Manteniendo tu estilo de contact-item original si lo necesitas */
 .contact-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-color);
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.contact-item:hover {
+    transform: translateX(5px);
+    border-color: var(--secondary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-form {
+        padding: 1.5rem;
+    }
+    
+    .section-subtitle {
+        margin-bottom: 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .contact-icon {
+        margin-bottom: 0.5rem;
+    }
+    
+    .contact-details h3 {
+        font-size: 0.7rem;
+    }
+    
+    .contact-details a,
+    .contact-details span {
+        font-size: 0.85rem;
+    }
 }
 
 /* ===========================
@@ -609,151 +857,237 @@ footer {
 </section>
 
 
+
+
     <!-- Sección Sobre Mí -->
     <section id="about">
-        <div class="section-container">
-            <h2 class="section-title">Sobre Mí</h2>
-            <div class="about-content">
-                <img src="imagenes/foto1.jpg" alt="Tu foto de perfil" class="profile-img">
-                <div>
-                    <p>¡Hola! Soy un desarrollador de software apasionado por la tecnología y la innovación. Me especializo en crear aplicaciones web modernas y eficientes usando las últimas tecnologías.</p>
-                    <br>
-                    <p>Mi journey en el desarrollo comenzó cuando descubrí lo apasionante que es crear soluciones que realmente ayuden a las personas. Con el tiempo, fui profundizando en el desarrollo web y mobile, combinando la lógica con la creatividad para construir proyectos funcionales y atractivos. Disfruto resolver problemas complejos y aprender nuevas tecnologías constantemente.</p>
-                    <br>
-                    
-                </div>
+    <div class="section-container">
+        <h2 class="section-title">Sobre Mí</h2>
+        <div class="about-content">
+            <img src="imagenes/foto1.jpg" alt="Foto de perfil de Francisco Almada, Desarrollador Full-Stack" class="profile-img">
+            
+            <div class="about-text">
+                <p>¡Hola! Soy Francisco, <strong>Licenciado en Análisis de Sistemas Informáticos</strong> y un desarrollador de software apasionado por la tecnología y la innovación. Me especializo en crear aplicaciones web modernas, eficientes y escalables usando las últimas tecnologías.</p>
+                
+                <p style="margin-top: 1.5rem;">Mi camino en el desarrollo comenzó al descubrir lo apasionante que es crear herramientas que realmente ayuden a las personas y democraticen la tecnología para los negocios locales. Con el tiempo, he profundizado en el desarrollo Full-Stack y en el ecosistema de bases de datos (como SQL y análisis de datos), combinando una fuerte lógica de negocio con la creatividad para construir proyectos funcionales y robustos. Disfruto resolver problemas complejos, optimizar arquitecturas y aprender nuevas tecnologías constantemente para aportar el mayor valor posible.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Sección Habilidades -->
     <section id="skills">
-        <div class="section-container">
-            <h2 class="section-title">Habilidades Técnicas</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <ul class="skill-list">
-                        <li>JavaScript (ES6+)</li>
-                        <li>React</li>
-                        <li>HTML5 & CSS3</li>
-                        <li>TypeScript</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <ul class="skill-list">
-                        <li>Node.js</li>
-                        <li>Express</li>
-                        <li>Python</li>
-                        <li>Bases de Datos SQL/NoSQL</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Herramientas</h3>
-                    <ul class="skill-list">
-                        <li>Git & GitHub</li>
-                        <li>Docker</li>
-                        <li>AWS</li>
-                        <li>Metodologías Ágiles</li>
-                    </ul>
-                </div>
+    <div class="section-container">
+        <h2 class="section-title">Habilidades Técnicas</h2>
+        <div class="skills-grid">
+            
+            <div class="skill-category">
+                <h3><i class="fas fa-laptop-code" style="margin-right: 8px; color: var(--accent-color);"></i>Frontend</h3>
+                <ul class="skill-list">
+                    <li>JavaScript & TypeScript</li>
+                    <li>React & Next.js</li>
+                    <li>Tailwind CSS</li>
+                    <li>HTML5 & CSS3</li>
+                    <li>PWA (Progressive Web Apps)</li>
+                </ul>
             </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-server" style="margin-right: 8px; color: var(--accent-color);"></i>Backend & Datos</h3>
+                <ul class="skill-list">
+                    <li>Python & FastAPI</li>
+                    <li>Bases de Datos SQL (PostgreSQL)</li>
+                    <li>Data Analytics</li>
+                    <li>Node.js & Express</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-tools" style="margin-right: 8px; color: var(--accent-color);"></i>Herramientas</h3>
+                <ul class="skill-list">
+                    <li>Git & GitHub</li>
+                    <li>Docker & AWS</li>
+                    <li>Vercel & Render</li>
+                    <li>Metodologías Ágiles</li>
+                </ul>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Sección Proyectos -->
-    <section id="projects">
-        <div class="section-container">
-            <h2 class="section-title">Mis Proyectos</h2>
-            <div class="projects-grid">
-                <!-- Proyecto 1 -->
-                <div class="project-card">
-                    <img src="imagenes/TaskFlow.png" class="project-img">
-                    <div class="project-content">
-                        <h3>TaskFlow Pro - Gestor Avanzado de Tareas</h3>
-                        <p>TaskFlow Pro es una aplicación web moderna de gestión de tareas desarrollada con Next.js y TypeScript. Ofrece un sistema completo de organización personal con funcionalidades avanzadas como fechas de vencimiento, recordatorios visuales y persistencia local.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Tailwind CSS</span>
-                        </div>
-                        <div class="project-links">
-<a href="https://github.com/franalmada/taskflow" class="btn" target="_blank" rel="noopener noreferrer">Código</a>                        </div>
+   <section id="projects">
+    <div class="section-container">
+        <h2 class="section-title">Mis Proyectos</h2>
+        <div class="projects-grid">
+            
+            <article class="project-card">
+                <img src="imagenes/TaskFlow.png" alt="Vista previa de la interfaz de TaskFlow Pro" class="project-img">
+                <div class="project-content">
+                    <h3>TaskFlow Pro - Gestor Avanzado de Tareas</h3>
+                    <p>TaskFlow Pro es una aplicación web moderna de gestión de tareas desarrollada con Next.js y TypeScript. Ofrece un sistema completo de organización personal con funcionalidades avanzadas como fechas de vencimiento, recordatorios visuales y persistencia local.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/franalmada/taskflow" class="btn" target="_blank" rel="noopener noreferrer">Código</a>
                     </div>
                 </div>
+            </article>
 
-                <!-- Proyecto 2 -->
-                <div class="project-card">
-                    <img src="imagenes/plataforma.png" class="project-img">
-                    <div class="project-content">
-                        <h3>Plataforma de Cursos de Diseño de Moda PWA</h3>
-                        <p>Plataforma educativa PWA para cursos de diseño de moda, permitiendo acceder a contenido premium desde cualquier dispositivo. Incluye sistema de administración de cursos, reproductor de videos y experiencia app-like nativa mediante instalación PWA.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Next.js 15</span>
-                            <span class="tech-tag">React 18 + TypeScript</span>
-                            <span class="tech-tag">PWA</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/franalmada/moda-cursos-platform" class="btn" target="_blank" rel="noopener noreferrer">Código</a>                        </div>
-
+            <article class="project-card">
+                <img src="imagenes/plataforma.png" alt="Vista previa de la Plataforma de Cursos de Diseño de Moda PWA" class="project-img">
+                <div class="project-content">
+                    <h3>Plataforma de Cursos de Diseño de Moda PWA</h3>
+                    <p>Plataforma educativa PWA para cursos de diseño de moda, permitiendo acceder a contenido premium desde cualquier dispositivo. Incluye sistema de administración de cursos, reproductor de videos y experiencia app-like nativa mediante instalación PWA.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Next.js 15</span>
+                        <span class="tech-tag">React 18 + TypeScript</span>
+                        <span class="tech-tag">PWA</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/franalmada/moda-cursos-platform" class="btn" target="_blank" rel="noopener noreferrer">Código</a>
+                        <a href="https://moda-cursos-platform-wlxx.vercel.app/" class="btn" target="_blank" rel="noopener noreferrer">Ver Demo</a>
                     </div>
                 </div>
+            </article>
 
-                <!-- Proyecto 3 -->
-                <div class="project-card">
-                    <img src="imagenes/commerce.png" class="project-img">
-                    <div class="project-content">
-                        <h3>E-commerce Fullstack</h3>
-                        <p>E-commerce completo desarrollado con Next.js que incluye catálogo de productos, carrito de compras, sistema de filtros y checkout simulado. Diseño responsive con gestión de estado mediante Context API para una experiencia de usuario fluida.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">CSS moderno</span>
-                        </div>
-                        <div class="project-links">
-                         <a href="https://github.com/franalmada/ecommerce" class="btn" target="_blank" rel="noopener noreferrer">Código</a>                        </div>
-
+            <article class="project-card">
+                <img src="imagenes/commerce.png" alt="Vista previa del E-commerce Fullstack" class="project-img">
+                <div class="project-content">
+                    <h3>E-commerce Fullstack</h3>
+                    <p>E-commerce completo desarrollado con Next.js que incluye catálogo de productos, carrito de compras, sistema de filtros y checkout simulado. Diseño responsive con gestión de estado mediante Context API para una experiencia de usuario fluida.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">CSS moderno</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/franalmada/ecommerce" class="btn" target="_blank" rel="noopener noreferrer">Código</a>
                     </div>
                 </div>
-            </div>
+            </article>
+ 
+            <article class="project-card">
+                <img src="imagenes/juegos.png" alt="Vista previa de la Plataforma Gamificada para el aprendizaje de aritmética" class="project-img">
+                <div class="project-content">
+                    <h3>Plataforma Gamificada - Demo</h3>
+                    <p>Plataforma web gamificada para el aprendizaje de aritmética básica en estudiantes de tercer grado, desarrollada como Trabajo Final de Grado de la carrera de Análisis de Sistemas Informáticos (UNAE).</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/franalmada/demo-juegos" class="btn" target="_blank" rel="noopener noreferrer">Código</a>
+                        <a href="https://franalmada.github.io/demo-juegos/" class="btn" target="_blank" rel="noopener noreferrer">Ver Demo</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <img src="imagenes/pelu1.png" alt="Vista previa del sistema de gestión de turnos para barbería" class="project-img">
+                <div class="project-content">
+                    <h3>Sistema completo de gestión de turnos para barbería con integración de WhatsApp</h3>
+                    <p>Arquitectura full-stack para agendamiento de turnos: API con FastAPI, autenticación por roles, panel de administración en Streamlit, y webhook para reservas vía WhatsApp Business. Implementa lógica de disponibilidad con validación de solapamiento de horarios en tiempo real.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">SQLAlchemy</span>
+                        <span class="tech-tag">Twilio</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/franalmada/barberia-bot-backend" class="btn" target="_blank" rel="noopener noreferrer">Código</a>
+                        <a href="https://barberia-admin-panel.onrender.com/" class="btn" target="_blank" rel="noopener noreferrer">Ver Demo</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <img src="imagenes/pelu2.png" alt="Vista previa del Sistema de Gestión de Turnos para Salones y Barberías" class="project-img">
+                <div class="project-content">
+                    <h3>Sistema de Gestión de Turnos para Salones y Barberías</h3>
+                    <p>Plataforma web Full-Stack diseñada para digitalizar la agenda de negocios locales. Permite a los clientes autogestionar sus reservas 24/7 y ofrece un panel de administración seguro para el control en tiempo real de citas, servicios y profesionales. Arquitectura escalable alojada en la nube.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Vercel</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/franalmada/sistema-turnos-dark" class="btn" target="_blank" rel="noopener noreferrer">Código</a>
+                        <a href="https://sistema-turnos-dark.vercel.app/admin" class="btn" target="_blank" rel="noopener noreferrer">Ver Demo</a>
+                    </div>
+                </div>
+            </article>
+
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Sección Contacto -->
-   <!-- Sección Contacto -->
+<!-- Sección Contacto -->
 <section id="contact">
     <div class="section-container">
         <h2 class="section-title">Contacto</h2>
+        <p class="section-subtitle">¿Tienes un proyecto en mente? Escríbeme y conversemos.</p>
+
         <div class="contact-content">
+            <!-- Formulario -->
             <form class="contact-form" id="contact-form">
                 <div class="form-group">
-                    <label for="name">Nombre</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="name">Nombre completo</label>
+                    <input type="text" id="name" name="name" placeholder="Tu nombre" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
                 </div>
                 <div class="form-group">
                     <label for="message">Mensaje</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <textarea id="message" name="message" rows="5" placeholder="¿En qué puedo ayudarte?" required></textarea>
                 </div>
-                <button type="submit" class="btn" id="submit-btn">Enviar Mensaje</button>
-                <div id="form-message" style="margin-top: 1rem;"></div>
+                <button type="submit" class="btn" id="submit-btn">
+                    <span>Enviar Mensaje</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+                <div id="form-message" class="form-message"></div>
             </form>
+
+            <!-- Información de contacto -->
             <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>francisarielalma.96@gmail.com</span>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <a href="mailto:francisarielalma.96@gmail.com">francisarielalma.96@gmail.com</a>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>0994.807.948</span>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Teléfono</h3>
+                        <a href="tel:+595994807948">0994.807.948</a>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Encarnación, Paraguay</span>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Ubicación</h3>
+                        <span>Encarnación, Paraguay</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -806,7 +1140,7 @@ footer {
                 <a href="https://github.com/franalmada"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/francisco-almada96/"><i class="fab fa-linkedin"></i></a>
             </div>
-            <p>&copy; 2025 Francisco Almada. Todos los derechos reservados.</p>
+            <p>&copy; 2026 Francisco Almada. Todos los derechos reservados.</p>
         </div>
     </footer>
 
