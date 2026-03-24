@@ -9,27 +9,31 @@
     <style>
 /* Variables de colores para modo claro */
 :root {
-    --primary-color: #212121;       /* Azul vivo */
-    --secondary-color: #00c853;     /* Verde brillante */
-    --accent-color: #00c853;        /* Verde acento más legible en claro */
-    --text-color: #212121;          /* Texto principal oscuro */
-    --light-bg: #f5f7fa;            /* Fondo general claro */
-    --white: #ffffff;               /* Fondo de secciones o tarjetas */
-    --card-bg: #ffffff;             /* Fondo de tarjetas */
-    --border-color: #d0d7de;        /* Bordes suaves */
+    --primary-color: #212121;
+    --secondary-color: #00c853;
+    --accent-color: #00c853;
+    --text-color: #212121;
+    --light-bg: #f5f7fa;
+    --white: #ffffff;
+    --card-bg: #ffffff;
+    --border-color: #d0d7de;
+    --footer-bg: #212121;        /* ← NUEVA LÍNEA */
+    --footer-text: #ffffff;       /* ← NUEVA LÍNEA */
     --transition: all 0.3s ease;
 }
 
 /* Variables de colores para modo oscuro */
 [data-theme="dark"] {
-    --primary-color: #00e676;      /* Verde neón principal */
-    --secondary-color: #2196f3;    /* Azul profundo secundario */
-    --accent-color: #1de9b6;       /* Verde-agua brillante */
-    --text-color: #00e676;         /* Texto claro */
-    --light-bg: #0d1117;           /* Fondo principal oscuro azulado */
-    --white: #14191f;              /* Fondo de secciones */
-    --card-bg: #1f242b;            /* Fondo de tarjetas */
-    --border-color: #2d333b;       /* Bordes suaves */
+    --primary-color: #00e676;
+    --secondary-color: #00a5e6;
+    --accent-color: #1de9b6;
+    --text-color: #00e676;
+    --light-bg: #0d1117;
+    --white: #14191f;
+    --card-bg: #1f242b;
+    --border-color: #2d333b;
+    --footer-bg: #0a0c10;        /* ← NUEVA LÍNEA */
+    --footer-text: #e6edf3;       /* ← NUEVA LÍNEA */
 }
 
 /* ===========================
@@ -684,30 +688,38 @@ section {
 /* Social Links */
 .social-links {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: center;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
+    margin: 1rem 0;
 }
 
 .social-links a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: var(--card-bg);
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
-    color: var(--text-color);
     transition: var(--transition);
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+/* Estilo para los íconos dentro de la página (sección contacto) */
+.contact-info .social-links a,
+section .social-links a {
+    background: var(--card-bg);
+    color: var(--primary-color);
     border: 1px solid var(--border-color);
 }
 
-.social-links a:hover {
-    background: var(--secondary-color);
-    color: white;
-    transform: translateY(-3px);
-    border-color: var(--secondary-color);
+.contact-info .social-links a:hover,
+section .social-links a:hover {
+    background: var(--accent-color);
+    color: #ffffff;
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 200, 83, 0.4);
 }
 
 /* Manteniendo tu estilo de contact-item original si lo necesitas */
@@ -769,27 +781,34 @@ section {
    FOOTER
 =========================== */
 footer {
-  background: var(--primary-color);
-  color: #fff;
-  text-align: center;
-  padding: 2rem;
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 2rem;
+    transition: var(--transition);
 }
 
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin: 1rem 0;
+footer .social-links a {
+    /* Usar las variables del tema para el color de los íconos */
+    background: transparent;
+    color: var(--footer-text);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.social-links a {
-  color: #fff;
-  font-size: 1.5rem;
-  transition: var(--transition);
+/* Hover efecto para el footer */
+footer .social-links a:hover {
+    background: var(--accent-color);
+    color: #ffffff;
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 200, 83, 0.4);
 }
 
-.social-links a:hover {
-  color: var(--secondary-color);
+/* Asegurar que el texto del footer también use las variables */
+footer p {
+    color: var(--footer-text);
+    opacity: 0.8;
+    margin-top: 1rem;
 }
 
 /* ===========================
@@ -864,7 +883,7 @@ footer {
     <div class="section-container">
         <h2 class="section-title">Sobre Mí</h2>
         <div class="about-content">
-            <img src="imagenes/foto1.jpg" alt="Foto de perfil de Francisco Almada, Desarrollador Full-Stack" class="profile-img">
+            <img src="imagenes/foto.png" alt="Foto de perfil de Francisco Almada, Desarrollador Full-Stack" class="profile-img">
             
             <div class="about-text">
                 <p>¡Hola! Soy Francisco, <strong>Licenciado en Análisis de Sistemas Informáticos</strong> y un desarrollador de software apasionado por la tecnología y la innovación. Me especializo en crear aplicaciones web modernas, eficientes y escalables usando las últimas tecnologías.</p>
@@ -1135,14 +1154,18 @@ footer {
 
     <!-- Footer -->
     <footer>
-        <div class="section-container">
-            <div class="social-links">
-                <a href="https://github.com/franalmada"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/francisco-almada96/"><i class="fab fa-linkedin"></i></a>
-            </div>
-            <p>&copy; 2026 Francisco Almada. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    <div class="section-container">
+        <div class="social-links">
+            <a href="https://github.com/franalmada" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/francisco-almada96/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>  
+        <p>&copy; 2026 Francisco Almada. Todos los derechos reservados.</p>
+    </div>
+</footer>
 
     <script>
         // Modo oscuro
